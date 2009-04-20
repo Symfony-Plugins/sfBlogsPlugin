@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.6.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfBlogsPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>The `sfBlogsPlugin` provides the model, a frontend and a backend modules to enable multiple blogs in a symfony application.</summary>
+ <description>The `sfBlogsPlugin` provides the model, a frontend and a backend modules to enable multiple blogs in a symfony application.</description>
+ <lead>
+  <name>François Zaninotto</name>
+  <user>fzaninotto</user>
+  <email>francois.zaninotto@symfony-project.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-04-20</date>
+ <time>14:28:19</time>
+ <version>
+  <release>0.5.0</release>
+  <api>0.5.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.symfony-project.org/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+  <dir name="/">
+   <file name="config/app.yml.sample" role="data" />
+   <file name="config/config.php" role="data" />
+   <file name="config/schema.yml" role="data" />
+   <file name="data/fixtures/test_data.yml" role="data" />
+   <file name="lib/helper/sfBlogHelper.php" role="data" />
+   <file name="lib/log/sfBlogLogger.php" role="data" />
+   <file name="lib/log/sfBlogPostLogger.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlog.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogComment.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogCommentFinder.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogFinder.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogLog.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogPost.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogPostFinder.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogTag.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogTagFinder.php" role="data" />
+   <file name="lib/model/plugin/PluginsfBlogUser.php" role="data" />
+   <file name="lib/model/sfBlog.php" role="data" />
+   <file name="lib/model/sfBlogComment.php" role="data" />
+   <file name="lib/model/sfBlogCommentFinder.php" role="data" />
+   <file name="lib/model/sfBlogCommentPeer.php" role="data" />
+   <file name="lib/model/sfBlogFinder.php" role="data" />
+   <file name="lib/model/sfBlogLog.php" role="data" />
+   <file name="lib/model/sfBlogLogPeer.php" role="data" />
+   <file name="lib/model/sfBlogPeer.php" role="data" />
+   <file name="lib/model/sfBlogPost.php" role="data" />
+   <file name="lib/model/sfBlogPostFinder.php" role="data" />
+   <file name="lib/model/sfBlogPostPeer.php" role="data" />
+   <file name="lib/model/sfBlogTag.php" role="data" />
+   <file name="lib/model/sfBlogTagFinder.php" role="data" />
+   <file name="lib/model/sfBlogTagPeer.php" role="data" />
+   <file name="lib/model/sfBlogUser.php" role="data" />
+   <file name="lib/model/sfBlogUserPeer.php" role="data" />
+   <file name="lib/sfBlogRouting.php" role="data" />
+   <file name="lib/sfBlogTools.class.php" role="data" />
+   <file name="modules/sfBlog/actions/actions.class.php" role="data" />
+   <file name="modules/sfBlog/actions/components.class.php" role="data" />
+   <file name="modules/sfBlog/config/view.yml" role="data" />
+   <file name="modules/sfBlog/lib/BasesfBlogActions.class.php" role="data" />
+   <file name="modules/sfBlog/lib/BasesfBlogComponents.class.php" role="data" />
+   <file name="modules/sfBlog/templates/_add_comment.php" role="data" />
+   <file name="modules/sfBlog/templates/_archives.php" role="data" />
+   <file name="modules/sfBlog/templates/_blogFeed.php" role="data" />
+   <file name="modules/sfBlog/templates/_blogFooter.php" role="data" />
+   <file name="modules/sfBlog/templates/_blogroll.php" role="data" />
+   <file name="modules/sfBlog/templates/_blogSidebar.php" role="data" />
+   <file name="modules/sfBlog/templates/_comment.php" role="data" />
+   <file name="modules/sfBlog/templates/_comment_list.php" role="data" />
+   <file name="modules/sfBlog/templates/_feed.php" role="data" />
+   <file name="modules/sfBlog/templates/_footer.php" role="data" />
+   <file name="modules/sfBlog/templates/_meta.php" role="data" />
+   <file name="modules/sfBlog/templates/_post.php" role="data" />
+   <file name="modules/sfBlog/templates/_recentBlogPosts.php" role="data" />
+   <file name="modules/sfBlog/templates/_recentPosts.php" role="data" />
+   <file name="modules/sfBlog/templates/_sidebar.php" role="data" />
+   <file name="modules/sfBlog/templates/_tagList.php" role="data" />
+   <file name="modules/sfBlog/templates/addCommentAjax.php" role="data" />
+   <file name="modules/sfBlog/templates/blogPostsSuccess.php" role="data" />
+   <file name="modules/sfBlog/templates/blogsSuccess.php" role="data" />
+   <file name="modules/sfBlog/templates/feedSuccess.php" role="data" />
+   <file name="modules/sfBlog/templates/indexSuccess.php" role="data" />
+   <file name="modules/sfBlog/templates/layout.php" role="data" />
+   <file name="modules/sfBlog/templates/postsSuccess.php" role="data" />
+   <file name="modules/sfBlog/templates/postSuccess.php" role="data" />
+   <file name="modules/sfBlog/templates/sendMailOnCommentSuccess.php" role="data" />
+   <file name="modules/sfBlog/validate/addComment.yml" role="data" />
+   <file name="modules/sfBlogAdmin/actions/actions.class.php" role="data" />
+   <file name="modules/sfBlogAdmin/actions/components.class.php" role="data" />
+   <file name="modules/sfBlogAdmin/config/security.yml" role="data" />
+   <file name="modules/sfBlogAdmin/config/view.yml" role="data" />
+   <file name="modules/sfBlogAdmin/lib/BaseAdminActions.class.php" role="data" />
+   <file name="modules/sfBlogAdmin/lib/BasesfBlogAdminActions.class.php" role="data" />
+   <file name="modules/sfBlogAdmin/lib/BasesfBlogAdminComponents.class.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/_blogFilter.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/_comment.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/_commentFilter.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/_commentList.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/_mainNavigation.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/_post.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/_postFilter.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/_postList.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/blogEditSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/blogPreviewSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/blogsSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/commentsAjaxSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/commentsSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/indexSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/layout.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/layoutNoSidebar.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/postEditSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/postPreviewFullSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/postPreviewSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/postsAjaxSuccess.php" role="data" />
+   <file name="modules/sfBlogAdmin/templates/postsSuccess.php" role="data" />
+   <file name="web/admin/css/layout.css" role="data" />
+   <file name="web/admin/css/main.css" role="data" />
+   <file name="web/admin/images/accept.png" role="data" />
+   <file name="web/admin/images/ajax-loader.gif" role="data" />
+   <file name="web/admin/images/arrow_undo.png" role="data" />
+   <file name="web/admin/images/bullet_arrow_down.png" role="data" />
+   <file name="web/admin/images/bullet_arrow_up.png" role="data" />
+   <file name="web/admin/images/cancel.png" role="data" />
+   <file name="web/admin/images/comments.png" role="data" />
+   <file name="web/admin/images/folder.png" role="data" />
+   <file name="web/admin/images/folder_add.png" role="data" />
+   <file name="web/admin/images/folder_delete.png" role="data" />
+   <file name="web/admin/images/folder_edit.png" role="data" />
+   <file name="web/admin/images/group.png" role="data" />
+   <file name="web/admin/images/help.png" role="data" />
+   <file name="web/admin/images/hgrabber.gif" role="data" />
+   <file name="web/admin/images/lightbulb.png" role="data" />
+   <file name="web/admin/images/lightbulb_off.png" role="data" />
+   <file name="web/admin/images/magnifier.png" role="data" />
+   <file name="web/admin/images/page_white_add.png" role="data" />
+   <file name="web/admin/images/page_white_delete.png" role="data" />
+   <file name="web/admin/images/page_white_edit.png" role="data" />
+   <file name="web/admin/images/page_white_go.png" role="data" />
+   <file name="web/admin/images/page_white_stack.png" role="data" />
+   <file name="web/admin/images/page_white_text_width.png" role="data" />
+   <file name="web/admin/images/tag_blue.png" role="data" />
+   <file name="web/admin/images/vgrabber.gif" role="data" />
+   <file name="web/admin/js/blogEditBehaviors.js" role="data" />
+   <file name="web/admin/js/blogsBehaviors.js" role="data" />
+   <file name="web/admin/js/commentsBehaviors.js" role="data" />
+   <file name="web/admin/js/jquery.autopager.js" role="data" />
+   <file name="web/admin/js/jquery.cookie.js" role="data" />
+   <file name="web/admin/js/jquery.datagrid.js" role="data" />
+   <file name="web/admin/js/jquery.splitter.js" role="data" />
+   <file name="web/admin/js/postEditBehaviors.js" role="data" />
+   <file name="web/admin/js/postsBehaviors.js" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-blockquote.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-h1.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-h2.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-h3.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-h4.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-h5.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-h6.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-p.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/lbl-pre.png" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/wymiframe.css" role="data" />
+   <file name="web/admin/wymeditor/iframe/default/wymiframe.html" role="data" />
+   <file name="web/admin/wymeditor/lang/ca.js" role="data" />
+   <file name="web/admin/wymeditor/lang/cs.js" role="data" />
+   <file name="web/admin/wymeditor/lang/de.js" role="data" />
+   <file name="web/admin/wymeditor/lang/en.js" role="data" />
+   <file name="web/admin/wymeditor/lang/es.js" role="data" />
+   <file name="web/admin/wymeditor/lang/fa.js" role="data" />
+   <file name="web/admin/wymeditor/lang/fr.js" role="data" />
+   <file name="web/admin/wymeditor/lang/he.js" role="data" />
+   <file name="web/admin/wymeditor/lang/hu.js" role="data" />
+   <file name="web/admin/wymeditor/lang/it.js" role="data" />
+   <file name="web/admin/wymeditor/lang/nb.js" role="data" />
+   <file name="web/admin/wymeditor/lang/nl.js" role="data" />
+   <file name="web/admin/wymeditor/lang/nn.js" role="data" />
+   <file name="web/admin/wymeditor/lang/pl.js" role="data" />
+   <file name="web/admin/wymeditor/lang/pt-br.js" role="data" />
+   <file name="web/admin/wymeditor/lang/pt.js" role="data" />
+   <file name="web/admin/wymeditor/lang/ru.js" role="data" />
+   <file name="web/admin/wymeditor/lang/sv.js" role="data" />
+   <file name="web/admin/wymeditor/lang/tr.js" role="data" />
+   <file name="web/admin/wymeditor/lang/zh_cn.js" role="data" />
+   <file name="web/admin/wymeditor/plugins/hovertools/jquery.wymeditor.hovertools.js" role="data" />
+   <file name="web/admin/wymeditor/plugins/resizable/jquery.wymeditor.resizable.js" role="data" />
+   <file name="web/admin/wymeditor/plugins/resizable/readme.txt" role="data" />
+   <file name="web/admin/wymeditor/plugins/tidy/jquery.wymeditor.tidy.js" role="data" />
+   <file name="web/admin/wymeditor/plugins/tidy/README" role="data" />
+   <file name="web/admin/wymeditor/plugins/tidy/tidy.php" role="data" />
+   <file name="web/admin/wymeditor/plugins/tidy/wand.png" role="data" />
+   <file name="web/admin/wymeditor/skins/default/icons.png" role="data" />
+   <file name="web/admin/wymeditor/skins/default/skin.css" role="data" />
+   <file name="web/admin/wymeditor/skins/default/skin.js" role="data" />
+   <file name="web/admin/wymeditor/skins/minimal/images/bg.header.gif" role="data" />
+   <file name="web/admin/wymeditor/skins/minimal/images/bg.selector.silver.gif" role="data" />
+   <file name="web/admin/wymeditor/skins/minimal/images/bg.wymeditor.png" role="data" />
+   <file name="web/admin/wymeditor/skins/minimal/images/icons.silver.gif" role="data" />
+   <file name="web/admin/wymeditor/skins/minimal/skin.css" role="data" />
+   <file name="web/admin/wymeditor/skins/minimal/skin.js" role="data" />
+   <file name="web/admin/wymeditor/skins/silver/images/bg.header.gif" role="data" />
+   <file name="web/admin/wymeditor/skins/silver/images/bg.selector.silver.gif" role="data" />
+   <file name="web/admin/wymeditor/skins/silver/images/bg.wymeditor.png" role="data" />
+   <file name="web/admin/wymeditor/skins/silver/images/icons.silver.gif" role="data" />
+   <file name="web/admin/wymeditor/skins/silver/COPYING" role="data" />
+   <file name="web/admin/wymeditor/skins/silver/README" role="data" />
+   <file name="web/admin/wymeditor/skins/silver/skin.css" role="data" />
+   <file name="web/admin/wymeditor/skins/silver/skin.js" role="data" />
+   <file name="web/admin/wymeditor/skins/twopanels/icons.png" role="data" />
+   <file name="web/admin/wymeditor/skins/twopanels/skin.css" role="data" />
+   <file name="web/admin/wymeditor/skins/twopanels/skin.js" role="data" />
+   <file name="web/admin/wymeditor/skins/wymeditor_icon.png" role="data" />
+   <file name="web/admin/wymeditor/jquery.wymeditor.js" role="data" />
+   <file name="web/admin/wymeditor/jquery.wymeditor.pack.js" role="data" />
+   <file name="web/css/admin.css" role="data" />
+   <file name="web/css/blog.css" role="data" />
+   <file name="web/css/layout.css" role="data" />
+   <file name="web/images/default_avatar_icon.jpg" role="data" />
+   <file name="web/js/jquery.js" role="data" />
+   <file name="LICENSE" role="data" />
+   <file name="package.xml" role="data" />
+   <file name="README" role="data" />
+   <file name="TODO" role="data" />
+  </dir>
+ </contents>
+ <dependencies>
+   <required>
+     <php>
+       <min>5.2.4</min>
+     </php>
+     <pearinstaller>
+       <min>1.4.1</min>
+     </pearinstaller>
+     <package>
+       <name>symfony</name>
+       <channel>pear.symfony-project.com</channel>
+       <min>1.2.0</min>
+       <max>1.3.0</max>
+       <exclude>1.3.0</exclude>
+     </package>
+     <package>
+       <name>DbFinderPlugin</name>
+       <channel>pear.symfony-project.com</channel>
+       <min>1.2.1</min>
+       <max>1.5.0</max>
+     </package>
+   </required>
+ </dependencies>
+ <phprelease />
+ <changelog />
+</package>
