@@ -13,8 +13,8 @@
  <date>2009-04-20</date>
  <time>14:28:19</time>
  <version>
-  <release>0.5.0</release>
-  <api>0.5.0</api>
+  <release>0.5.1</release>
+  <api>0.5.1</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -221,7 +221,6 @@
    <file name="web/images/default_avatar_icon.jpg" role="data" />
    <file name="web/js/jquery.js" role="data" />
    <file name="LICENSE" role="data" />
-   <file name="package.xml" role="data" />
    <file name="README" role="data" />
    <file name="TODO" role="data" />
   </dir>
@@ -250,5 +249,21 @@
    </required>
  </dependencies>
  <phprelease />
- <changelog />
+ <changelog>
+   <release>
+     <version>
+       <release>0.5.1</release>
+       <api>0.5.1</api>
+     </version>
+     <stability>
+      <release>alpha</release>
+      <api>alpha</api>
+     </stability>
+     <license uri="http://www.symfony-project.org/license">MIT license</license>
+     <date>2009-04-20</date>
+     <notes>
+       * francois: Initial release
+     </notes>
+   </release>
+ </changelog>
 </package>

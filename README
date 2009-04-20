@@ -4,6 +4,7 @@ sfSimpleBlog plugin
 The `sfBlogsPlugin` provides the model, a frontend and a backend modules to enable multiple blogs in a symfony application.
 
 Frontend features:
+
  - List of blogs
  - Lists of posts
  - Details of a post
@@ -13,6 +14,7 @@ Frontend features:
  - RSS feeds (if [sfFeed2Plugin](http://www.symfony-project.org/plugins/sfFeed2Plugin) is installed)
 
 Backend features:
+
  - Timeline
  - Post management
  - Comment management
