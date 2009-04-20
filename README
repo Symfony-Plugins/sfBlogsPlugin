@@ -68,7 +68,7 @@ Enable the two new modules in your applications, via the `settings.yml` file. Do
 
 Start using the plugin by browsing to the frontend module's default page:
 
-    http://myproject/frontend_dev.php/sfBlog/home    # frontend
+    http://myproject/frontend_dev.php/home           # frontend
     http://myproject/frontend_dev.php/sfBlogAdmin    # administration
 
 Tip: To test the plugin with test data, execute the following command:
