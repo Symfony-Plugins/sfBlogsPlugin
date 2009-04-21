@@ -1,5 +1,6 @@
 <?php use_helper('I18N', 'Date') ?>
 <?php $sf_context->getResponse()->setTitle(sfConfig::get('app_sfBlogs_title', 'All Blogs')) ?>
+<?php if($posts instanceof sfOutputEscaperArrayDecorator) $posts = $sf_data->getRaw('posts') ?>
 
 <?php if(sfConfig::get('app_sfBlogs_use_feeds', true)): ?>
 <?php slot('auto_discovery_link_tag') ?>

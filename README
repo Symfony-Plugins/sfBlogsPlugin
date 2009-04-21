@@ -173,3 +173,14 @@ The plugin has its own routing roules for the frontend, with a heavy use of DbFi
       class:   DbFinderObjectsRoute
       options: { model: sfBlogPost, finder_methods: [innerJoinsfBlog, withsfBlog, published, innerJoinsfGuardUser, withsfGuardUser], default_order: [published_at, desc] }
       param: { module: sfBlog, action: index }
+
+Changelog
+---------
+
+### 2009-04-21 | Trunk
+
+* francois: Fixed problems with output escaping in the `sfBlog` module
+
+### 2009-04-20 | 0.5.0 Alpha
+
+* francois: Initial release
