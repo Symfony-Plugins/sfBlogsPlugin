@@ -37,7 +37,8 @@
     </p>
     <p>
       <?php echo image_tag('/sfBlogsPlugin/admin/images/group', 'align=absbottom') ?>
-      <?php echo __('Authors:') ?> <?php echo join($blog->getUsers(), ', ') ?>
+      <?php $users = $blog->getUsers()->getRawValue() ?>
+      <?php echo __('Authors:') ?> <?php echo join($users, ', ') ?>
     </p>
   </div>
 </div>
