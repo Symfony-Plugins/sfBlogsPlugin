@@ -1,8 +1,5 @@
 <?php use_helper('Date') ?>
-<?php if (isset($blog)): ?>
-  
-<?php else: ?>
-<?php endif ?>
+<?php $link = $sf_data->getRaw('link') ?>
 <h2><?php echo __('Archives') ?></h2>
 <ul>
   <?php foreach($archives as $archive): ?>

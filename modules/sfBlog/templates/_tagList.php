@@ -1,3 +1,4 @@
+<?php $link = $sf_data->getRaw('link') ?>
 <h2><?php echo __('Tags') ?></h2>
 <ul>
   <?php foreach($tags as $tag): ?>

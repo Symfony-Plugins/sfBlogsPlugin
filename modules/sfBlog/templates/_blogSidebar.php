@@ -1,6 +1,6 @@
 <?php slot('sfBlog_sidebar') ?>
 <h1><?php echo link_to_blog($blog) ?></h1>
-<div id="tagline"><?php echo $blog->getTagline() ?></div>
+<div id="tagline"><?php echo $blog->getTagline(ESC_RAW) ?></div>
   <?php foreach(sfConfig::get('app_sfBlogs_sidebar', array('custom', 'blog_recent_posts', 'archives', 'tags', 'feeds', 'blogroll', 'meta')) as $widget): ?>
 
     <?php if($widget == 'feeds' && sfConfig::get('app_sfBlogs_use_feeds', true)): ?>

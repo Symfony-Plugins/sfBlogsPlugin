@@ -1,5 +1,5 @@
 <?php use_helper('I18N', 'Date', 'sfBlog') ?>
-<?php $raw_params = $params instanceof sfOutputEscaper ? $params->getRaw() : $params ?>
+<?php $raw_params = $sf_data->getRaw('params') ?>
 <?php $http_params = http_build_query($raw_params) ?>
 <?php $title = get_post_list_title($raw_params, $sf_params->get('page')) ?>
 

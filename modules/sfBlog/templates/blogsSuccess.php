@@ -18,7 +18,7 @@
     </h2>
     <div class="details">
       <div class="tagline">
-        <?php echo $blog->getTagline() ?>
+        <?php echo $blog->getTagline(ESC_RAW) ?>
       </div>
     </div>
   </div>
