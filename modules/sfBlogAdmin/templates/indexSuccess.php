@@ -2,7 +2,7 @@
 <?php if (count($logs)): ?>
   <ul class="timeline">
   <?php $day = 0 ?>
-  <?php foreach ($logs as $log): ?>
+  <?php foreach ($sf_data->getRaw('logs') as $log): ?>
     <?php if (date('dm', $log->getCreatedAt('U')) != $day): ?>
       <?php $day = date('dm', $log->getCreatedAt('U')) ?>
       <h3><?php echo format_date($log->getCreatedAt('U'), 'EEEE F MMMM') ?></h3>

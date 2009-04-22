@@ -50,7 +50,7 @@ class sfBlogPostLogger
       $blog = $post->getsfBlog();
       $log = new sfBlogLog();
       $log->setElements($user, $author, 'publish_post', $post, 'Post "%object%" published in %complement%', '%subject% published post "%object%" in %complement%', $blog);
-      $log->setObjectLink(sfBlogTools::generatePostUri($post));
+      $log->setObjectLink($post->getFeedLink());
       $log->setComplementLink('sfBlogAdmin/blogEdit?id='.$blog->getId());
       $log->save();
     }

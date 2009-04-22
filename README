@@ -177,9 +177,10 @@ The plugin has its own routing roules for the frontend, with a heavy use of DbFi
 Changelog
 ---------
 
-### 2009-04-21 | Trunk
+### 2009-04-22 | Trunk
 
-* francois: Fixed problems with output escaping in the `sfBlog` module
+* francois: Fixed calls to a removed method
+* francois: Fixed problems with output escaping
 
 ### 2009-04-20 | 0.5.0 Alpha
 

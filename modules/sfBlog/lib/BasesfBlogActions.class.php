@@ -311,7 +311,7 @@ class BasesfBlogActions extends sfActions
     }
     else
     {
-      $this->redirect(sfBlogTools::generatePostUri($post));
+      $this->redirect($this->getController()->genUrl(array('sf_route' => 'post', 'sf_subject' => $post), true));
     }
   }
   
