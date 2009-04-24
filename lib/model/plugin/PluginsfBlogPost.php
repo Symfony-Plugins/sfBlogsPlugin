@@ -46,7 +46,7 @@ class PluginsfBlogPost extends BasesfBlogPost
   public function getExcerpt()
   {
     $extract = $this->getExtract();
-    if(!$extract)
+    if(!trim($extract))
     {
       $content = $this->getContent(ESC_RAW);
       if ($content == '')
