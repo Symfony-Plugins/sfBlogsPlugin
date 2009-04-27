@@ -177,8 +177,9 @@ The plugin has its own routing roules for the frontend, with a heavy use of DbFi
 Changelog
 ---------
 
-### 2009-04-22 | Trunk
+### 2009-04-27 | Trunk
 
+* francois: Fixed a typo in the admin post list that created a bug in case-sensitive systems
 * francois: Fixed calls to a removed method
 * francois: Fixed problems with output escaping
 
