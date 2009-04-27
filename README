@@ -1,5 +1,5 @@
-sfSimpleBlog plugin
-===================
+sfBlogs plugin
+==============
 
 The `sfBlogsPlugin` provides the model, a frontend and a backend modules to enable multiple blogs in a symfony application.
 
