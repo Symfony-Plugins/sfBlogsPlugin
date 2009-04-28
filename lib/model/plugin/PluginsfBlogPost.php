@@ -27,7 +27,7 @@ class PluginsfBlogPost extends BasesfBlogPost
       $this->rawSet('title', $text);
     }
 
-    $this->setStrippedTitle(sfBlogTools::stripText($text)); 
+    $this->setStrippedTitle(sfBlogTools::stripText($text));
   }
 
   public function getAuthor()
@@ -94,21 +94,19 @@ class PluginsfBlogPost extends BasesfBlogPost
     $tags = DbFinder::from('sfBlogTag')->
       relatedTo($this)->
       orderBy('Tag')->
+      select('Tag')->
       find();
-    $ret = '';
-    foreach ($tags as $tag)
-    {
-      $ret .= (empty($ret) ? '' : ' ') . (string) $tag;
-    }
     
-    return $ret;
+    return join($tags, ' ');
   }
 
   public function setTagsAsString($tagString)
   {
+    // delete previous tags
     DbFinder::from('sfBlogTag')->
       relatedTo($this)->
       delete();
+    // add the new ones
     $tags = explode(' ', $tagString);
     foreach ($tags as $tag)
     {
