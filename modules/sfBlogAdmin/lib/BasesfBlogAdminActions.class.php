@@ -215,6 +215,7 @@ class BasesfBlogAdminActions extends BaseAdminActions
   {
     $comment = $this->getObjectFromRequest($request, 'sfBlogComment');
     $comment->setAccepted()->save();
+    sfBlogCommentLogger::approve($comment);
     if($request->isXmlHttpRequest())
     {
       return $this->renderPartial('sfBlogAdmin/comment', array('comment' => $comment));
@@ -229,6 +230,7 @@ class BasesfBlogAdminActions extends BaseAdminActions
   {
     $comment = $this->getObjectFromRequest($request, 'sfBlogComment');
     $comment->setAccepted()->save();
+    sfBlogCommentLogger::approve($comment);
     
     return $request->isXmlHttpRequest() ? sfView::HEADER_ONLY : $this->redirect('sfBlogAdmin/comments');
   }
@@ -238,6 +240,7 @@ class BasesfBlogAdminActions extends BaseAdminActions
     $comment = $this->getObjectFromRequest($request, 'sfBlogComment');
     $comment->setSpam()->save();
     // TODO: call spam WS
+    sfBlogCommentLogger::remove($comment);
     
     return $request->isXmlHttpRequest() ? sfView::HEADER_ONLY : $this->redirect('sfBlogAdmin/comments');
   }
@@ -246,6 +249,7 @@ class BasesfBlogAdminActions extends BaseAdminActions
   {
     $comment = $this->getObjectFromRequest($request, 'sfBlogComment');
     $comment->delete();
+    sfBlogCommentLogger::remove($comment);
     
     return $request->isXmlHttpRequest() ? sfView::HEADER_ONLY : $this->redirect('sfBlogAdmin/comments');
   }

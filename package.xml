@@ -29,6 +29,7 @@
    <file name="config/schema.yml" role="data" />
    <file name="data/fixtures/test_data.yml" role="data" />
    <file name="lib/helper/sfBlogHelper.php" role="data" />
+   <file name="lib/log/sfBlogCommentLogger.php" role="data" />
    <file name="lib/log/sfBlogLogger.php" role="data" />
    <file name="lib/log/sfBlogPostLogger.php" role="data" />
    <file name="lib/model/plugin/PluginsfBlog.php" role="data" />

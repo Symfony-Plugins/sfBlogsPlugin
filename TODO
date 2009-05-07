@@ -6,8 +6,7 @@
 * implement addition of a user to a blog (waiting for sfGuard update)
 * implement date filter to blog list
 * implement date filter to post list
-* log when adding a new comment
 * log when adding / removing a user from a blog
-* remove link on comment logs when removing a post / a blog
+* Edit a comment in the backend
 * detect sfAssetsLibrary plugin and use it (ORM dependent)
 * detect sfVersionablePlugin and use it (ORM dependent)

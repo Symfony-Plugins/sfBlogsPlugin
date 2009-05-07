@@ -291,6 +291,8 @@ class BasesfBlogActions extends sfActions
     ));
     $comment->save();
     
+    sfBlogCommentLogger::create($comment, $request->getParameter('name'));
+    
     // set flash parameter for the feedback
     $this->getUser()->setFlash('add_comment', $comment->isAccepted() ? 'normal' : 'moderated');
     

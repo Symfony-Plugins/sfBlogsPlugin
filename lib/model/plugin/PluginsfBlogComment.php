@@ -97,4 +97,31 @@ class PluginsfBlogComment extends BasesfBlogComment
     $post->leaveUpdatedAtUnchanged();
     $post->save($con);
   }
+  
+  public function getInterestedAuthors()
+  {
+    // return the author of the post
+    // as well as the main author of the blog (if it's not the same user)
+    $postAuthor = $this->getsfBlogPost()->getAuthor();
+    $blogAuthor = $this->getsfBlogPost()->getsfBlog()->getCreator();
+    if($postAuthor->getId() == $blogAuthor->getId())
+    {
+      return array($postAuthor);
+    }
+    else
+    {
+      return array($postAuthor, $blogAuthor);
+    }
+  }
+  
+  public function __toString()
+  {
+    $mbstring = extension_loaded('mbstring');
+    if($mbstring)
+    {
+       @mb_internal_encoding(mb_detect_encoding($content));
+    }
+    $substr = ($mbstring) ? 'mb_substr' : 'substr';
+    return $substr(strip_tags($this->getContent()), 0, sfConfig::get('app_sfBlogs_excerpt_comment', 40)) . sfConfig::get('app_sfBlogs_excerpt_suffix', '...');
+  }
 }

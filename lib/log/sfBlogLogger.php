@@ -61,6 +61,12 @@ class sfBlogLogger
       where('ObjectClass', 'sfBlogPost')->
       where('ObjectId', 'in', $ids)->
       set(array('ObjectLink' => '', 'ComplementLink' => ''));
+    // remove links from logs on comments on posts the same post
+    DbFinder::from('sfBlogLog')->
+      where('ObjectClass', 'sfBlogComment')->
+      where('ComplementClass', 'sfBlogPost')->
+      where('ComplementId', 'in', $ids)->
+      set(array('ObjectLink' => '', 'ComplementLink' => ''));
   }
 
 }

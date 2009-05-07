@@ -265,6 +265,10 @@ ul.timeline li.delete_blog
 {
   list-style-image: url(../images/folder_delete.png);
 }
+ul.timeline li.create_comment
+{
+  list-style-image: url(../images/comment_add.png);
+}
 
 /*********************/
 /* Navigation styles */

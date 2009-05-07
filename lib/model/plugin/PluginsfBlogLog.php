@@ -51,8 +51,11 @@ class PluginsfBlogLog extends BasesfBlogLog
   
   public function setSubject($subject)
   {
-    $this->setSubjectClass(get_class($subject));
-    $this->setSubjectId($subject->getId());
+    if (is_object($subject))
+    {
+      $this->setSubjectClass(get_class($subject));
+      $this->setSubjectId($subject->getId());
+    }
     $this->setSubjectName((string) $subject);
   }
   

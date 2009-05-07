@@ -177,6 +177,7 @@ Changelog
 
 ### 2009-05-07 | Trunk
 
+* francois: Added comment log in the timeline
 * francois: Refactored backend filters
 * francois: Fixed a typo in the admin post list that created a bug in case-sensitive systems
 * francois: Fixed calls to a removed method
