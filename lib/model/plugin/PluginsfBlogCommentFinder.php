@@ -46,60 +46,50 @@ class PluginsfBlogCommentFinder extends Dbfinder
       _endif();
   }
   
-  public function applyFilters($filters)
+  public function filterByText($text)
   {
-    if (isset($filters['parent_id']) && ($parent = $filters['parent_id']))
+    $text = trim($text);
+    if($text == '' || preg_match('/^[\%\*]+$/', $text))
     {
-      if(substr($parent, 0, 4) == 'blog')
-      {
-        $this->
-          join('sfBlogPost')->
-          where('sfBlogPost.sfBlogId', substr($parent, 5));
-      }
-      elseif(substr($parent, 0, 4) == 'post')
-      {
-        $this->
-          where('sfBlogPost.Id', substr($parent, 5));
-      }
+      return $this;
     }
-    if (isset($filters['text']) && $filters['text'] !== '')
+    $text = '%'.trim($text, '*%').'%';
+    return $this->
+      where('AuthorName', 'like', $text)->
+      orWhere('AuthorEmail', 'like', $text)->
+      orWhere('Content', 'like', $text);
+  }
+  
+  public function filterByParentId($parent)
+  {
+    if(substr($parent, 0, 4) == 'blog')
     {
-      $value = '%'.trim($filters['text'], '*%').'%';
-      $this->
-        where('AuthorName', 'like', $value)->
-        orWhere('AuthorEmail', 'like', $value)->
-        orWhere('Content', 'like', $value);
+      return $this->
+        join('sfBlogPost')->
+        where('sfBlogPost.sfBlogId', substr($parent, 5));
     }
-    if (isset($filters['created_at']))
+    elseif(substr($parent, 0, 4) == 'post')
     {
-      if (isset($filters['created_at']['from']) && $filters['created_at']['from'] !== '')
-      {
-        $this->where('CreatedAt', '>=', $filters['created_at']['from']);
-      }
-      if (isset($filters['created_at']['to']) && $filters['created_at']['to'] !== '')
-      {
-        $this->where('CreatedAt', '<=', $filters['created_at']['to']);
-      }
+      return $this->
+        where('sfBlogPost.Id', substr($parent, 5));
     }
-    if (isset($filters['status']) && $filters['status'] !== '')
+  }
+  
+  public function filterByStatus($status)
+  {
+    switch ($status)
     {
-      switch ($filters['status'])
-      {
-        case 'pending':
-          $this->
-            where('Status', sfBlogComment::PENDING)->
-            orwhere('Status', sfBlogComment::DUBIOUS);
-          break;
-        case 'approved':
-          $this->where('Status', sfBlogComment::ACCEPTED);
-          break;
-        case 'spam':
-          $this->where('Status', sfBlogComment::REJECTED);
-          break;
-      }
+      case 'pending':
+        return $this->
+          where('Status', sfBlogComment::PENDING)->
+          orWhere('Status', sfBlogComment::DUBIOUS);
+      case 'approved':
+        return $this->where('Status', sfBlogComment::ACCEPTED);
+      case 'spam':
+        return $this->where('Status', sfBlogComment::REJECTED);
+      default:
+        return $this->where('Status', '<>', sfBlogComment::REJECTED);
     }
-    
-    return $this;
   }
   
   public function isAuthorApproved($author_name, $author_email)

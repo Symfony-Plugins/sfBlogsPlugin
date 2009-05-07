@@ -12,9 +12,9 @@
     <li class="level1 blog">
       <?php echo link_to($blog->getTitle(), 'sfBlogAdmin/posts', array(
         'query_string' => 'filter=filter&filters[blog_id]='.$blog->getId(),
-        'title' => $blog->getTitle(),
-        'id' => 'filter_blog_'.$blog->getId(),
-        'class' => 'blog'
+        'title'        => $blog->getTitle(),
+        'id'           => 'filter_blog_'.$blog->getId(),
+        'class'        => 'blog'
       )) ?>
     </li>
   <?php endforeach ?>
@@ -22,29 +22,29 @@
   <li class="level0 open">
     <?php echo link_to(__('Status'), 'sfBlogAdmin/comments', array(
       'query_string' => 'filter=filter&filters[is_published]=',
-      'class' => 'filter_is_published'
+      'class'        => 'filter_is_published'
     )) ?>
   </li>
   <ul>
     <li class="level1 draft">
       <?php echo link_to(__('Draft'), 'sfBlogAdmin/comments', array(
         'query_string' => 'filter=filter&filters[is_published]=0',
-        'class' => 'filter_is_published draft',
-        'id' => 'filter_is_published_0'
+        'class'        => 'filter_is_published draft',
+        'id'           => 'filter_is_published_0'
       )) ?>
     </li>
     <li class="level1 published">
       <?php echo link_to(__('Published'), 'sfBlogAdmin/comments', array(
         'query_string' => 'filter=filter&filters[is_published]=1',
-        'class' => 'filter_is_published',
-        'id' => 'filter_is_published_1'
+        'class'        => 'filter_is_published',
+        'id'           => 'filter_is_published_1'
       )) ?>
     </li>
   </ul>
   <li class="level0 open">
     <?php echo link_to(__('Tags'), 'sfBlogAdmin/posts', array(
       'query_string' => 'filter=filter&filters[tag]=',
-      'class' => 'tag'
+      'class'        => 'tag'
     )) ?>
   </li>
   <ul>
@@ -52,9 +52,9 @@
     <li class="level1 tag">
       <?php echo link_to($tag->getTag(), 'sfBlogAdmin/posts', array(
         'query_string' => 'filter=filter&filters[tag]='.$tag->getTag(),
-        'title' => $tag->getTag(),
-        'id' => 'filter_tag_'.$tag->getTag(),
-        'class' => 'tag'
+        'title'        => $tag->getTag(),
+        'id'           => 'filter_tag_'.$tag->getTag(),
+        'class'        => 'tag'
       )) ?>
     </li>
   <?php endforeach ?>

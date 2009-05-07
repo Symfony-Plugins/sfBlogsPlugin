@@ -70,44 +70,35 @@ class PluginsfBlogPostFinder extends Dbfinder
       whereCustom('date_format(sfBlogPost.PublishedAt, \'%%y%%m\') = ?',$month);
   }
   
-  public function applyFilters($filters)
+  public function filterByText($text)
   {
-    $public = true;
-    if (isset($filters['blog_id']) && $filters['blog_id'])
+    $text = trim($text);
+    if ($text == '' || preg_match('/^[\%\*]+$/', $text))
     {
-      $this->
-        where('sfBlogId', $filters['blog_id']);
+      return $this;
     }
-    if (isset($filters['tag']) && $filters['tag'])
+    $text = '%'.trim($text, '*%').'%';
+    return $this->
+      where('Title', 'like', $text)->
+      orWhere('Content', 'like', $text);
+  }
+  
+  public function filterByBlogId($blogId)
+  {
+    if ($blogId)
     {
-      $this->
+      return $this->where('sfBlogId', $blogId);
+    }
+  }
+  
+  public function filterbyTag($tag)
+  {
+    if ($tag)
+    {
+      return $this->
         join('sfBlogTag')->
-        where('sfBlogTag.Tag', $filters['tag']);
+        where('sfBlogTag.Tag', $tag);
     }
-    if (isset($filters['text']) && $filters['text'] !== '')
-    {
-      $value = '%'.trim($filters['text'], '*%').'%';
-      $this->
-        where('Title', 'like', $value)->
-        orWhere('Content', 'like', $value);
-    }
-    if (isset($filters['is_published']) && $filters['is_published'] !== '')
-    {
-      $this->where('IsPublished', (boolean) $filters['is_published']);
-    }
-    if (isset($filters['created_at']))
-    {
-      if (isset($filters['created_at']['from']) && $filters['created_at']['from'] !== '')
-      {
-        $this->where('CreatedAt', '>=', $filters['created_at']['from']);
-      }
-      if (isset($filters['created_at']['to']) && $filters['created_at']['to'] !== '')
-      {
-        $this->where('CreatedAt', '<=', $filters['created_at']['to']);
-      }
-    }
-    
-    return $this;
   }
   
   public function applySort($sorts)

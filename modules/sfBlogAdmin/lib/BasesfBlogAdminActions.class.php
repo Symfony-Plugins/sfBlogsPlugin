@@ -159,7 +159,7 @@ class BasesfBlogAdminActions extends BaseAdminActions
     return DbFinder::from('sfBlogPost')->
       with('sfBlog')->
       managedBy($this->getUser())->
-      applyFilters($this->filters)->
+      filter($this->filters, true)->
       applySort($this->sort)->
       paginate($request->getParameter('page', 1), sfConfig::get('app_sfBlogs_backend_page', 10));
   }
@@ -256,7 +256,7 @@ class BasesfBlogAdminActions extends BaseAdminActions
     return DbFinder::from('sfBlogComment')->
       join('sfBlogPost')->with('sfBlogPost')->
       managedBy($this->getUser())->
-      applyFilters($this->filters)->
+      filter($this->filters, true)->
       orderBy('CreatedAt', 'desc')->
       paginate($request->getParameter('page', 1), sfConfig::get('app_sfBlogs_backend_page', 10));
   }

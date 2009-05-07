@@ -61,7 +61,6 @@ class sfBlogLogger
       where('ObjectClass', 'sfBlogPost')->
       where('ObjectId', 'in', $ids)->
       set(array('ObjectLink' => '', 'ComplementLink' => ''));
-    
   }
 
 }
